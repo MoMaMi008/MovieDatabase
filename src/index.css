@@ -1,9 +1,25 @@
+@font-face {
+  font-family: Montserrat-regular;
+  src: url(./assets/fonts/Montserrat/Montserrat-Regular.ttf);
+}
+
+@font-face {
+  font-family: Montserrat-800;
+  src: url(./assets/fonts/Montserrat/Montserrat-800.ttf);
+}
+
+@font-face {
+  font-family: Poppins-regular;
+  src: url(./assets/fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: Poppins-700;
+  src: url(./assets/fonts/Poppins/Poppins-700.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
-  margin: 0 auto;
 }
