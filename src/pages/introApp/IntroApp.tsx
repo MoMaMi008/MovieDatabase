@@ -1,5 +1,5 @@
 import SplashScreen from "../../components/splashScreen/SplashScreen";
-import background from "../../assets/images/intro-background.png";
+
 import img from "../../assets/images/intro.png";
 import Button from "../../components/button/Button";
 import "./IntroApp.css";
