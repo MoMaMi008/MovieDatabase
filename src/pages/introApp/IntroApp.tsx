@@ -1,8 +1,8 @@
 import useFetch from "../../hooks/useFetch";
-import { getTrendingMoviesUrl, OPTIONS } from "../../utils/api/Api";
+import { getTrendingUrl, OPTIONS } from "../../utils/api/Api";
 
 const IntroApp = () => {
-    const IntroData = useFetch(getTrendingMoviesUrl("en-US"), OPTIONS);
+    const IntroData = useFetch(getTrendingUrl("en-US"), OPTIONS);
 
     console.log("Data", IntroData);
 

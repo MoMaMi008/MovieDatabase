@@ -10,7 +10,7 @@ export const OPTIONS = {
 };
 
 export const getTrendingUrl = (language: string): string => {
-    const resultUrl = `${BASE_URL}movie/trending/movie/day?language=${language}`;
+    const resultUrl = `${BASE_URL}trending/movie/day?language=${language}&api_key=${apiKey}`; 
     return resultUrl;
 };
 

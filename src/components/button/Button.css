@@ -1,0 +1,12 @@
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: #fc2121;
+    padding: 1rem 3.125rem;
+    color: white;
+    font-family: Poppins-700;
+    border-radius: 0.625rem;
+    border: none;
+}
