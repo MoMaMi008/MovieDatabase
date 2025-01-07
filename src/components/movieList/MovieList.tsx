@@ -13,15 +13,14 @@ interface IMovieListProps {
 }
 
 const MovieList: FC<IMovieListProps> = ({ inputGenre }) => {
-  const movieListData = useFetch<ISearchData>(
-    getMovieListUrl("en-US", inputGenre?.id),
+  const { data } = useFetch<ISearchData>(
+    getMovieListUrl(inputGenre?.id),
     OPTIONS
   );
-  console.log("movieListData", movieListData);
 
   return (
     <section className="movie-genre-list">
-      {movieListData.data?.results.map((singleMovie: IMovieHome) => (
+      {data?.results.map((singleMovie: IMovieHome) => (
         <Link to={"/details"} key={singleMovie.id}>
           <MovieCard singleMovie={singleMovie} inputGenre={inputGenre} />
         </Link>

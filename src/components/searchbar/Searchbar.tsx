@@ -4,6 +4,7 @@ import { getSearchUrl, OPTIONS } from "../../utils/api/Api";
 import { IMovieHome, ISearchData } from "../../pages/home/Home";
 import "./Searchbar.css";
 import SearchIcon from "../../assets/SVG/SearchIcon";
+import { getReleasedYear } from "../../utils/functions/Functions";
 const Searchbar = () => {
   const [input, setInput] = useState<string>("");
 
@@ -11,11 +12,7 @@ const Searchbar = () => {
     setInput(e.target.value);
   };
 
-  const searchData = useFetch<ISearchData>(
-    getSearchUrl(input, "en-US"),
-    OPTIONS
-  );
-  console.log("searchData", searchData);
+  const { data } = useFetch<ISearchData>(getSearchUrl(input), OPTIONS);
 
   return (
     <section className="searchbar">
@@ -33,13 +30,13 @@ const Searchbar = () => {
         <div className="search-output">
           {" "}
           <ul>
-            {searchData.data?.results.map((singleMovie: IMovieHome) => (
+            {data?.results.map((singleMovie: IMovieHome) => (
               <a href="#" key={singleMovie.id}>
                 <li>
                   {singleMovie.title}
-                  {isNaN(new Date(singleMovie.release_date).getFullYear())
+                  {isNaN(getReleasedYear(singleMovie.release_date))
                     ? ""
-                    : ` (${new Date(singleMovie.release_date).getFullYear()})`}
+                    : ` (${getReleasedYear(singleMovie.release_date)})`}
                 </li>
               </a>
             ))}

@@ -11,11 +11,9 @@ import SearchPage from "./pages/searchPage/SearchPage";
 import MovieDetails from "./pages/movieDetails/MovieDetails";
 import { useState } from "react";
 import { IGenre } from "./components/genreSlider/GenreSlider";
-// import { genreArrayContext } from "./context/Context";
 
 function App() {
   const [inputGenre, setInputGenre] = useState<IGenre | null>(null);
-  // const [genreArray, setGenreArray] = useState<IGenre[]>([]);
 
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -34,9 +32,7 @@ function App() {
   );
   return (
     <>
-      {" "}
-      {/* <genreArrayContext.Provider value={{ genreArray, setGenreArray }}> */}
-      <RouterProvider router={router} /> {/* </genreArrayContext.Provider> */}
+      <RouterProvider router={router} />
     </>
   );
 }

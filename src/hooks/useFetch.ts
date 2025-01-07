@@ -21,6 +21,9 @@ const useFetch = <T>(
         const response = await fetch(url, options);
         const result = await response.json();
         setData(result);
+
+        console.log("fetched", url);
+
         if (!response.ok) {
           throw new Error("Error while fetching");
         }

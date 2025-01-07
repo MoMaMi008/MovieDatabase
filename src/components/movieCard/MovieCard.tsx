@@ -3,6 +3,7 @@ import { IMovieHome } from "../../pages/home/Home";
 import "./MovieCard.css";
 import BookmarkIcon from "../../assets/SVG/BookmarkIcon";
 import { IGenre } from "../genreSlider/GenreSlider";
+import { getReleasedYear } from "../../utils/functions/Functions";
 
 interface IMovieCardProps {
   singleMovie: IMovieHome;
@@ -27,10 +28,10 @@ const MovieCard: FC<IMovieCardProps> = ({ singleMovie, inputGenre }) => {
         <div className="card-bottom-textbox">
           <p className="text-rate">⭐{singleMovie.vote_average.toFixed(1)}</p>
 
-          {isNaN(new Date(singleMovie.release_date).getFullYear()) ? (
+          {isNaN(getReleasedYear(singleMovie.release_date)) ? (
             ""
           ) : (
-            <p>{new Date(singleMovie.release_date).getFullYear()}</p>
+            <p>{getReleasedYear(singleMovie.release_date)}</p>
           )}
 
           <p>{inputGenre?.name} </p>
