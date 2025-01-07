@@ -1,6 +1,7 @@
 .searchbar {
   width: 100%;
   margin-bottom: 1.5rem;
+  position: relative;
 }
 .input-box {
   width: 100%;
@@ -22,4 +23,28 @@
 }
 .input-box input:focus {
   outline: none;
+}
+.search-output {
+  border-radius: 10px;
+  max-height: 15rem;
+  width: 95%;
+  overflow: scroll;
+  background-color: #edecec;
+  position: absolute;
+  z-index: 50;
+  left: 1rem;
+}
+.search-output li {
+  list-style: none;
+  margin-left: 1rem;
+}
+.search-output li:hover {
+  background-color: #5353537d;
+  color: #fff;
+}
+.search-output a {
+  text-decoration: none;
+  color: #373636;
+  font-family: Poppins-300;
+  font-size: 1rem;
 }

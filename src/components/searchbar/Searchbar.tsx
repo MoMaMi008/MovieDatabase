@@ -23,6 +23,7 @@ const Searchbar = () => {
         <input
           type="text"
           value={input}
+          name="input"
           onChange={(e) => handleChange(e)}
           placeholder="Search Movie ..."
         />

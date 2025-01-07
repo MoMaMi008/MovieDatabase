@@ -3,6 +3,7 @@ import { IMovieHome, ISearchData } from "../../pages/home/Home";
 import { getMoviesByGenreUrl, OPTIONS } from "../../utils/api/Api";
 import MiniMovieCard from "../miniMovieCard/MiniMovieCard";
 import { FC } from "react";
+import "./MoviesByGenre.css";
 
 interface IMoviesByGenreProps {
   inputGenreId: number;
@@ -16,7 +17,7 @@ const MoviesByGenre: FC<IMoviesByGenreProps> = ({ inputGenreId }) => {
   console.log("moviesByGenreData", moviesByGenreData);
 
   return (
-    <section>
+    <section className="movie-genre-list">
       {moviesByGenreData.data?.results.map((singleMovie: IMovieHome) => (
         <p key={singleMovie.id}>{singleMovie.title}</p>
       ))}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import GenreSlider from "../../components/genreSlider/GenreSlider";
 import MoviesByGenre from "../../components/moviesByGenre/MoviesByGenre";
 import Searchbar from "../../components/searchbar/Searchbar";
@@ -26,9 +26,11 @@ export interface IMovieHome {
   vote_average: number;
   vote_count: number;
 }
+interface IHomeProps {
+  setInputGenreId: React.Dispatch<React.SetStateAction<number>>;
+}
 
-const Home = () => {
-  const [inputGenreId, setInputGenreId] = useState<number>(0);
+const Home: FC<IHomeProps> = ({ setInputGenreId }) => {
   return (
     <section className="home">
       <h1>Welcome!</h1>
@@ -36,7 +38,6 @@ const Home = () => {
         <Searchbar />
         <GenreSlider setInputGenreId={setInputGenreId} />
       </div>
-      <MoviesByGenre inputGenreId={inputGenreId} />
     </section>
   );
 };
