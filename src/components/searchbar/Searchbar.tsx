@@ -35,7 +35,10 @@ const Searchbar = () => {
           <ul>
             {searchData.data?.results.map((singleMovie: IMovieHome) => (
               <a href="#" key={singleMovie.id}>
-                <li>{singleMovie.title}</li>
+                <li>
+                  {singleMovie.title} (
+                  {new Date(singleMovie.release_date).getFullYear()})
+                </li>
               </a>
             ))}
           </ul>{" "}

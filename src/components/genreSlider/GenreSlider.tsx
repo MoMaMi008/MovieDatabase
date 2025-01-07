@@ -3,6 +3,7 @@ import useFetch from "../../hooks/useFetch";
 import { getGenreUrl, OPTIONS } from "../../utils/api/Api";
 import "./GenreSlider.css";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 interface IGenreData {
   genres: IGenre[];
@@ -34,13 +35,15 @@ const GenreSlider: FC<IGenreSliderProps> = ({ setInputGenreId }) => {
         {genreData.data?.genres
           .sort((a: IGenre, b: IGenre) => a.id - b.id)
           .map((singleGenre: IGenre) => (
-            <motion.button
-              type="button"
-              key={singleGenre.id}
-              onClick={() => getGenreID(singleGenre)}
-            >
-              {singleGenre.name}
-            </motion.button>
+            <Link to={"/search_page"} key={singleGenre.id}>
+              {" "}
+              <motion.button
+                type="button"
+                onClick={() => getGenreID(singleGenre)}
+              >
+                {singleGenre.name}
+              </motion.button>
+            </Link>
           ))}{" "}
       </motion.div>
     </motion.div>

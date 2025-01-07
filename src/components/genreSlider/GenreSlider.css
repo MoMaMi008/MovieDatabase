@@ -9,6 +9,13 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+
+  width: fit-content;
+}
+.inner-genre-slider a {
+  text-decoration: none;
 }
 .inner-genre-slider button {
   display: flex;

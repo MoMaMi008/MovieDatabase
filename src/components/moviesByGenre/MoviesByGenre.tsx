@@ -19,7 +19,7 @@ const MoviesByGenre: FC<IMoviesByGenreProps> = ({ inputGenreId }) => {
   return (
     <section className="movie-genre-list">
       {moviesByGenreData.data?.results.map((singleMovie: IMovieHome) => (
-        <p key={singleMovie.id}>{singleMovie.title}</p>
+        <MiniMovieCard key={singleMovie.id} singleMovie={singleMovie} />
       ))}
     </section>
   );
