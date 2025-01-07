@@ -17,6 +17,14 @@
   font-family: Poppins-700;
   src: url(./assets/fonts/Poppins/Poppins-700.ttf);
 }
+@font-face {
+  font-family: Poppins-500;
+  src: url(./assets/fonts/Poppins/Poppins-500.ttf);
+}
+@font-face {
+  font-family: Poppins-300;
+  src: url(./assets/fonts/Poppins/Poppins-300.ttf);
+}
 
 * {
   margin: 0;

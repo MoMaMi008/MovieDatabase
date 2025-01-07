@@ -1,0 +1,25 @@
+.searchbar {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+.input-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #fbf8ff;
+  border-radius: 10px;
+  padding: 0 17px;
+}
+.input-box input {
+  font-family: Poppins-300;
+  font-size: 1rem;
+  color: #5e5e5e;
+  border: none;
+  background-color: transparent;
+  padding: 14px 17px;
+}
+.input-box input:focus {
+  outline: none;
+}

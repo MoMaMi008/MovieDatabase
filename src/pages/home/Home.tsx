@@ -2,6 +2,7 @@ import { useState } from "react";
 import GenreSlider from "../../components/genreSlider/GenreSlider";
 import MoviesByGenre from "../../components/moviesByGenre/MoviesByGenre";
 import Searchbar from "../../components/searchbar/Searchbar";
+import "./Home.css";
 
 export interface ISearchData {
   page: number;
@@ -29,7 +30,7 @@ export interface IMovieHome {
 const Home = () => {
   const [inputGenreId, setInputGenreId] = useState<number>(0);
   return (
-    <section>
+    <section className="home">
       <h1>Welcome!</h1>
       <div>
         <Searchbar />

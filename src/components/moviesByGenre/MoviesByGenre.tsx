@@ -13,7 +13,7 @@ const MoviesByGenre: FC<IMoviesByGenreProps> = ({ inputGenreId }) => {
     getMoviesByGenreUrl("en-US", inputGenreId),
     OPTIONS
   );
-  console.log(moviesByGenreData);
+  console.log("moviesByGenreData", moviesByGenreData);
 
   return (
     <section>
