@@ -1,7 +1,6 @@
 import useFetch from "../../hooks/useFetch";
 import { IMovieHome, ISearchData } from "../../pages/home/Home";
 import { getMovieListUrl, OPTIONS } from "../../utils/api/Api";
-
 import { FC } from "react";
 import "./MovieList.css";
 import { Link } from "react-router-dom";
