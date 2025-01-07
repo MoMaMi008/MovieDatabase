@@ -1,11 +1,14 @@
 .intro {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
-    position: relative;
     background: url(../../assets/images/intro-background.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    z-index: 1;
 }
 
 .intro > div {
