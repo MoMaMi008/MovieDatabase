@@ -1,13 +1,13 @@
 import { FC } from "react";
 import { IMovieHome } from "../../pages/home/Home";
-import "./MiniMovieCard.css";
+import "./MovieCard.css";
 import BookmarkIcon from "../../assets/SVG/BookmarkIcon";
 
-interface IMiniMovieCardProps {
+interface IMovieCardProps {
   singleMovie: IMovieHome;
 }
 
-const MiniMovieCard: FC<IMiniMovieCardProps> = ({ singleMovie }) => {
+const MovieCard: FC<IMovieCardProps> = ({ singleMovie }) => {
   return (
     <article className="movie-card">
       <img
@@ -39,4 +39,4 @@ const MiniMovieCard: FC<IMiniMovieCardProps> = ({ singleMovie }) => {
   );
 };
 
-export default MiniMovieCard;
+export default MovieCard;

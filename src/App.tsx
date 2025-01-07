@@ -10,25 +10,22 @@ import Home from "./pages/home/Home";
 import SearchPage from "./pages/searchPage/SearchPage";
 import MovieDetails from "./pages/movieDetails/MovieDetails";
 import { useState } from "react";
+import { IGenre } from "./components/genreSlider/GenreSlider";
+// import { genreArrayContext } from "./context/Context";
 
 function App() {
-  const [inputGenreId, setInputGenreId] = useState<number>(0);
+  const [inputGenre, setInputGenre] = useState<IGenre | null>(null);
+  // const [genreArray, setGenreArray] = useState<IGenre[]>([]);
 
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
         <Route path="/" element={<IntroApp />} />
-        <Route
-          path="/home"
-          element={<Home setInputGenreId={setInputGenreId} />}
-        />
+        <Route path="/home" element={<Home setInputGenre={setInputGenre} />} />
         <Route
           path="/search_page"
           element={
-            <SearchPage
-              inputGenreId={inputGenreId}
-              setInputGenreId={setInputGenreId}
-            />
+            <SearchPage inputGenre={inputGenre} setInputGenre={setInputGenre} />
           }
         />
         <Route path="/details" element={<MovieDetails />} />
@@ -37,7 +34,9 @@ function App() {
   );
   return (
     <>
-      <RouterProvider router={router} />
+      {" "}
+      {/* <genreArrayContext.Provider value={{ genreArray, setGenreArray }}> */}
+      <RouterProvider router={router} /> {/* </genreArrayContext.Provider> */}
     </>
   );
 }

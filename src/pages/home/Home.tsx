@@ -1,11 +1,11 @@
 import { FC } from "react";
-import GenreSlider from "../../components/genreSlider/GenreSlider";
+import GenreSlider, { IGenre } from "../../components/genreSlider/GenreSlider";
 
 import Searchbar from "../../components/searchbar/Searchbar";
 import "./Home.css";
 
 interface IHomeProps {
-  setInputGenreId: React.Dispatch<React.SetStateAction<number>>;
+  setInputGenre: React.Dispatch<React.SetStateAction<IGenre | null>>;
 }
 
 export interface ISearchData {
@@ -31,13 +31,13 @@ export interface IMovieHome {
   vote_count: number;
 }
 
-const Home: FC<IHomeProps> = ({ setInputGenreId }) => {
+const Home: FC<IHomeProps> = ({ setInputGenre }) => {
   return (
     <section className="home">
       <h1>Welcome!</h1>
       <div>
         <Searchbar />
-        <GenreSlider setInputGenreId={setInputGenreId} />
+        <GenreSlider setInputGenre={setInputGenre} />
       </div>
     </section>
   );

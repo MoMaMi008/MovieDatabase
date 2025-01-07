@@ -4,24 +4,39 @@ import { getGenreUrl, OPTIONS } from "../../utils/api/Api";
 import "./GenreSlider.css";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+// import { genreArrayContext } from "../../context/Context";
 
-interface IGenreData {
+export interface IGenreData {
   genres: IGenre[];
 }
-interface IGenre {
+export interface IGenre {
   id: number;
   name: string;
 }
 
 interface IGenreSliderProps {
-  setInputGenreId: React.Dispatch<React.SetStateAction<number>>;
+  setInputGenre: React.Dispatch<React.SetStateAction<IGenre | null>>;
 }
-const GenreSlider: FC<IGenreSliderProps> = ({ setInputGenreId }) => {
+const GenreSlider: FC<IGenreSliderProps> = ({ setInputGenre }) => {
   const genreData = useFetch<IGenreData>(getGenreUrl("en-US"), OPTIONS);
-  console.log(genreData);
+  console.log("genreData", genreData);
+
+  // ^später für Rendering Genres auf der MovieDetails Page
+  // const { genreArray, setGenreArray } = useContext(genreArrayContext);
+
+  // useEffect(() => {
+  //   if (genreData && genreData.data && genreData.data.genres) {
+  //     // Only update the state if genreArray is empty
+  //     if (genreArray.length === 0) {
+  //       setGenreArray([...genreData.data.genres]);
+  //     }
+  //   }
+  // }, [genreData, genreArray, setGenreArray]);
+
+  // console.log("genreArray", genreArray);
 
   const getGenreID = (singleGenre: IGenre) => {
-    setInputGenreId(singleGenre.id);
+    setInputGenre(singleGenre);
   };
 
   return (
