@@ -6,3 +6,7 @@
   max-height: 38rem;
   overflow: scroll;
 }
+.movie-genre-list a {
+  text-decoration: none;
+  color: #000000;
+}

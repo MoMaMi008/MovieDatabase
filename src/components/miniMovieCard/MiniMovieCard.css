@@ -3,6 +3,10 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  border-radius: 15px;
+}
+.movie-card:hover .card-top-textbox p {
+  text-decoration: underline;
 }
 .movie-card img {
   width: 20%;

@@ -1,8 +1,12 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import GenreSlider from "../../components/genreSlider/GenreSlider";
-import MoviesByGenre from "../../components/moviesByGenre/MoviesByGenre";
+
 import Searchbar from "../../components/searchbar/Searchbar";
 import "./Home.css";
+
+interface IHomeProps {
+  setInputGenreId: React.Dispatch<React.SetStateAction<number>>;
+}
 
 export interface ISearchData {
   page: number;
@@ -25,9 +29,6 @@ export interface IMovieHome {
   video: boolean;
   vote_average: number;
   vote_count: number;
-}
-interface IHomeProps {
-  setInputGenreId: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const Home: FC<IHomeProps> = ({ setInputGenreId }) => {
