@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { IMovieHome } from "../../pages/home/Home";
 import "./MiniMovieCard.css";
-import { BASE_URL } from "../../utils/api/Api";
+import BookmarkIcon from "../../assets/SVG/BookmarkIcon";
 
 interface IMiniMovieCardProps {
   singleMovie: IMovieHome;
@@ -16,13 +16,23 @@ const MiniMovieCard: FC<IMiniMovieCardProps> = ({ singleMovie }) => {
       />
       <div className="textbox-wrapper">
         <div className="card-top-textbox">
-          <p>{singleMovie.title}</p>{" "}
+          <p>{singleMovie.title}</p>
+          <button className="btn-bookmark">
+            {" "}
+            <BookmarkIcon />
+          </button>
         </div>
         <div className="card-bottom-textbox">
           <p className="text-rate">⭐{singleMovie.vote_average}</p>
-          <p>• {new Date(singleMovie.release_date).getFullYear()}</p>
-          <p>{singleMovie.genre_ids}</p>
-          <p>(Dauer 2h38m)</p>
+
+          {isNaN(new Date(singleMovie.release_date).getFullYear()) ? (
+            ""
+          ) : (
+            <p>• {new Date(singleMovie.release_date).getFullYear()}</p>
+          )}
+
+          <p>• Genre </p>
+          <p>• 2h 38m</p>
         </div>
       </div>
     </article>

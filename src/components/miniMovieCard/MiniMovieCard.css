@@ -1,8 +1,8 @@
 .movie-card {
-  border: 1px solid salmon;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
 }
 .movie-card img {
   width: 20%;
@@ -11,19 +11,30 @@
 .movie-card .textbox-wrapper {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .card-top-textbox {
   display: flex;
   justify-content: space-between;
   font-family: Poppins-700;
-  font-size: 1.1rem;
-}
 
+  height: 4rem;
+}
+.card-top-textbox p {
+  width: 90%;
+}
 .card-bottom-textbox {
   display: flex;
-  flex-direction: column;
+  gap: 10px;
+  font-size: 0.9rem;
   font-family: Poppins-500;
 }
 .text-rate {
   font-family: Poppins-700;
+}
+.btn-bookmark {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  align-self: flex-start;
 }
