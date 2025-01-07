@@ -2,12 +2,14 @@ import { FC } from "react";
 import { IMovieHome } from "../../pages/home/Home";
 import "./MovieCard.css";
 import BookmarkIcon from "../../assets/SVG/BookmarkIcon";
+import { IGenre } from "../genreSlider/GenreSlider";
 
 interface IMovieCardProps {
   singleMovie: IMovieHome;
+  inputGenre: IGenre | null;
 }
 
-const MovieCard: FC<IMovieCardProps> = ({ singleMovie }) => {
+const MovieCard: FC<IMovieCardProps> = ({ singleMovie, inputGenre }) => {
   return (
     <article className="movie-card">
       <img
@@ -23,16 +25,16 @@ const MovieCard: FC<IMovieCardProps> = ({ singleMovie }) => {
           </button>
         </div>
         <div className="card-bottom-textbox">
-          <p className="text-rate">⭐{singleMovie.vote_average}</p>
+          <p className="text-rate">⭐{singleMovie.vote_average.toFixed(1)}</p>
 
           {isNaN(new Date(singleMovie.release_date).getFullYear()) ? (
             ""
           ) : (
-            <p>• {new Date(singleMovie.release_date).getFullYear()}</p>
+            <p>{new Date(singleMovie.release_date).getFullYear()}</p>
           )}
 
-          <p>• Genre </p>
-          <p>• 2h 38m</p>
+          <p>{inputGenre?.name} </p>
+          <p>2h 38m</p>
         </div>
       </div>
     </article>

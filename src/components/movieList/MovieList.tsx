@@ -23,7 +23,7 @@ const MovieList: FC<IMovieListProps> = ({ inputGenre }) => {
     <section className="movie-genre-list">
       {movieListData.data?.results.map((singleMovie: IMovieHome) => (
         <Link to={"/details"} key={singleMovie.id}>
-          <MovieCard singleMovie={singleMovie} />
+          <MovieCard singleMovie={singleMovie} inputGenre={inputGenre} />
         </Link>
       ))}
     </section>
