@@ -35,21 +35,30 @@ const MovieDetails: React.FC = () => {
 
     return (
         <div className="movie-details-container" style={{ backgroundImage: `url(${backdropUrl})` }}>
+            <div className="gradient-overlay"></div>
             <div className="movie-details">
                 <h2>Movie Details</h2>
                 <p className="movie-name">{movie.title}</p>
+
                 <div className="movie-info">
-                    <span className="rating">
-                        <FaStar className="star-icon" />
-                        {movie.vote_average.toFixed(1)}
-                    </span>
-                    <FaCircle className="separator" />
-                    <span className="date">{new Date(movie.release_date).getFullYear()}</span>
-                    <FaCircle className="separator" />
-                    <span className="genre">{movie.genres[0]?.name}</span>
-                    <FaCircle className="separator" />
-                    <span className="duration">{Math.floor(movie.runtime / 60)}h {movie.runtime % 60}m</span>
-                </div>
+    <div className="info-group">
+        <FaStar className="star-icon" />
+        <span className="rating-value">{movie.vote_average.toFixed(1)}</span>
+    </div>
+    <div className="info-group">
+        <FaCircle className="separator" />
+        <span className="date">{new Date(movie.release_date).getFullYear()}</span>
+    </div>
+    <div className="info-group">
+        <FaCircle className="separator" />
+        <span className="genre">{movie.genres[0]?.name}</span>
+    </div>
+    <div className="info-group">
+        <FaCircle className="separator" />
+        <span className="duration">{Math.floor(movie.runtime / 60)}h {movie.runtime % 60}m</span>
+    </div>
+</div>
+
 
                 <div className="overview">
                     <h2>Overview</h2>
