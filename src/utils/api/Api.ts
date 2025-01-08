@@ -35,7 +35,7 @@ export const getMovieListUrl = (genreId: number | undefined): string => {
     return resultUrl;
 };
 
-export const getMovieImage = (movie_id: number, image_path: string) => {
-    const resultUrl = `${BASE_URL}movie/${movie_id}/images/${image_path}`;
+export const getMovieImage = (image_path: string) => {
+    const resultUrl = `https://image.tmdb.org/t/p/original${image_path}`;
     return resultUrl;
 };
