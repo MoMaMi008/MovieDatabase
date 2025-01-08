@@ -1,27 +1,35 @@
 @font-face {
-    font-family: Montserrat-regular;
-    src: url(./assets/fonts/Montserrat/Montserrat-Regular.ttf);
+  font-family: Montserrat-regular;
+  src: url(./assets/fonts/Montserrat/Montserrat-Regular.ttf);
 }
 
 @font-face {
-    font-family: Montserrat-800;
-    src: url(./assets/fonts/Montserrat/Montserrat-800.ttf);
+  font-family: Montserrat-800;
+  src: url(./assets/fonts/Montserrat/Montserrat-800.ttf);
 }
 
 @font-face {
-    font-family: Poppins-regular;
-    src: url(./assets/fonts/Poppins/Poppins-Regular.ttf);
+  font-family: Poppins-regular;
+  src: url(./assets/fonts/Poppins/Poppins-Regular.ttf);
 }
 
 @font-face {
-    font-family: Poppins-700;
-    src: url(./assets/fonts/Poppins/Poppins-700.ttf);
+  font-family: Poppins-700;
+  src: url(./assets/fonts/Poppins/Poppins-700.ttf);
+}
+@font-face {
+  font-family: Poppins-500;
+  src: url(./assets/fonts/Poppins/Poppins-500.ttf);
+}
+@font-face {
+  font-family: Poppins-300;
+  src: url(./assets/fonts/Poppins/Poppins-300.ttf);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {

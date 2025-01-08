@@ -1,0 +1,13 @@
+.home {
+  width: 428px;
+  height: 926px;
+  margin: 0 auto;
+  padding: 4rem 1.7rem 0 1.7rem;
+  border: 1px solid brown;
+}
+
+.home h1 {
+  font-family: Poppins-700, Helvetica;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}

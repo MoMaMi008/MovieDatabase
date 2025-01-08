@@ -1,0 +1,44 @@
+.movie-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-radius: 15px;
+}
+.movie-card:hover .card-top-textbox p {
+  text-decoration: underline;
+}
+.movie-card img {
+  width: 20%;
+  border-radius: 15px;
+}
+.movie-card .textbox-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.card-top-textbox {
+  display: flex;
+  justify-content: space-between;
+  font-family: Poppins-700;
+
+  height: 5rem;
+}
+.card-top-textbox p {
+  width: 90%;
+}
+.card-bottom-textbox {
+  display: flex;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-family: Poppins-500;
+}
+.text-rate {
+  font-family: Poppins-700;
+}
+.btn-bookmark {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  align-self: flex-start;
+}
