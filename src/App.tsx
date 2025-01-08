@@ -16,7 +16,7 @@ function App() {
                 <Route path="/" element={<IntroApp />} />
                 <Route path="/home" element={<Home setInputGenre={setInputGenre} />} />
                 <Route path="/search_page" element={<SearchPage inputGenre={inputGenre} setInputGenre={setInputGenre} />} />
-                <Route path="/details" element={<MovieDetails />} />
+                <Route path="/movie/:id" element={<MovieDetails />} />
             </>
         )
     );
