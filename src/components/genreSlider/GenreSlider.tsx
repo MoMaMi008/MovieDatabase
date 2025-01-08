@@ -14,7 +14,7 @@ export interface IGenre {
 }
 
 interface IGenreSliderProps {
-  setInputGenre: React.Dispatch<React.SetStateAction<IGenre | null>>;
+  setInputGenre: React.Dispatch<React.SetStateAction<IGenre>>;
 }
 const GenreSlider: FC<IGenreSliderProps> = ({ setInputGenre }) => {
   const { data } = useFetch<IGenreData>(getGenreUrl(), OPTIONS);

@@ -13,7 +13,7 @@ import { IMovieDetails } from "../../pages/movieDetails/MovieDetails";
 
 interface IMovieCardProps {
   singleMovie: IMovieHome;
-  inputGenre: IGenre | null;
+  inputGenre: IGenre;
 }
 
 const MovieCard: FC<IMovieCardProps> = ({ singleMovie, inputGenre }) => {
