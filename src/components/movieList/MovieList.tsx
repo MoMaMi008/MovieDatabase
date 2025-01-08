@@ -12,16 +12,13 @@ interface IMovieListProps {
 }
 
 const MovieList: FC<IMovieListProps> = ({ inputGenre }) => {
-  // ^============== for the function, "LOAD MORE button"
   const [movies, setMovies] = useState<IMovieHome[]>([]);
   const [page, setPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(0);
   const [shouldFetch, setShouldFetch] = useState<boolean>(true);
 
-  const { data } = useFetch<ISearchData>(
-    shouldFetch ? getMovieListUrl(inputGenre?.id, page) : "",
-    OPTIONS
-  );
+  const fetchUrl = shouldFetch ? getMovieListUrl(inputGenre?.id, page) : null;
+  const { data } = useFetch<ISearchData>(fetchUrl, OPTIONS);
   console.log("moviesArray", movies);
 
   useEffect(() => {

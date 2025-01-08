@@ -9,13 +9,18 @@ interface IOptions {
 }
 
 const useFetch = <T>(
-  url: string,
+  url: string | null,
   options: IOptions
 ): { data: T | null; loading: boolean } => {
   const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
+    if (!url) {
+      setLoading(false);
+      return;
+    }
+
     const fetchData = async () => {
       try {
         const response = await fetch(url, options);
