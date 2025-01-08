@@ -34,3 +34,8 @@ export const getMovieListUrl = (genreId: number | undefined): string => {
     const resultUrl = `${BASE_URL}discover/movie?&language=${chosenLanguage}&with_genres=${genreId}`;
     return resultUrl;
 };
+
+export const getMovieImage = (movie_id: number, image_path: string) => {
+    const resultUrl = `${BASE_URL}movie/${movie_id}/images/${image_path}`;
+    return resultUrl;
+};
