@@ -20,6 +20,7 @@ export interface IMovieDetails {
     runtime: number;
     overview: string;
     spoken_languages: { english_name: string }[];
+    spoken_languages: { english_name: string }[];
 }
 
 const MovieDetails: React.FC = () => {
