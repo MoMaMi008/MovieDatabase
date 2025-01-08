@@ -8,7 +8,7 @@ import { IGenre } from "../genreSlider/GenreSlider";
 import MovieCard from "../movieCard/MovieCard";
 
 interface IMovieListProps {
-  inputGenre: IGenre | null;
+  inputGenre: IGenre;
 }
 
 const MovieList: FC<IMovieListProps> = ({ inputGenre }) => {
@@ -20,7 +20,7 @@ const MovieList: FC<IMovieListProps> = ({ inputGenre }) => {
   return (
     <section className="movie-genre-list">
       {data?.results.map((singleMovie: IMovieHome) => (
-        <Link to={"/details"} key={singleMovie.id}>
+        <Link to={`/details/${singleMovie.id}`} key={singleMovie.id}>
           <MovieCard singleMovie={singleMovie} inputGenre={inputGenre} />
         </Link>
       ))}

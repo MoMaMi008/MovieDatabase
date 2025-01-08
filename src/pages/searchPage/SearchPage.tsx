@@ -6,8 +6,8 @@ import "./SearchPage.css";
 import MovieList from "../../components/movieList/MovieList";
 
 interface ISearchPageProps {
-  inputGenre: IGenre | null;
-  setInputGenre: React.Dispatch<React.SetStateAction<IGenre | null>>;
+  inputGenre: IGenre;
+  setInputGenre: React.Dispatch<React.SetStateAction<IGenre>>;
 }
 const SearchPage: FC<ISearchPageProps> = ({ setInputGenre, inputGenre }) => {
   return (

@@ -5,6 +5,7 @@ import { IMovieHome, ISearchData } from "../../pages/home/Home";
 import "./Searchbar.css";
 import SearchIcon from "../../assets/SVG/SearchIcon";
 import { getReleasedYear } from "../../utils/functions/Functions";
+import { Link } from "react-router-dom";
 const Searchbar = () => {
   const [input, setInput] = useState<string>("");
 
@@ -31,14 +32,14 @@ const Searchbar = () => {
           {" "}
           <ul>
             {data?.results.map((singleMovie: IMovieHome) => (
-              <a href="#" key={singleMovie.id}>
+              <Link to={`/details/${singleMovie.id}`} key={singleMovie.id}>
                 <li>
                   {singleMovie.title}
                   {isNaN(getReleasedYear(singleMovie.release_date))
                     ? ""
                     : ` (${getReleasedYear(singleMovie.release_date)})`}
                 </li>
-              </a>
+              </Link>
             ))}
           </ul>{" "}
         </div>

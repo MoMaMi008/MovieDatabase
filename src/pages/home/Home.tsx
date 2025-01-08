@@ -5,7 +5,7 @@ import Searchbar from "../../components/searchbar/Searchbar";
 import "./Home.css";
 
 interface IHomeProps {
-  setInputGenre: React.Dispatch<React.SetStateAction<IGenre | null>>;
+  setInputGenre: React.Dispatch<React.SetStateAction<IGenre>>;
 }
 
 export interface ISearchData {
