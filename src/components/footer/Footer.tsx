@@ -10,6 +10,7 @@ import BookMarkIcon from "../../assets/SVG/bookMark.svg"
 const Footer: React.FC = () => {
     return (
         <footer className="footer">
+            <div className="footer-icons">
             <Link to="/home" className="home-icon">
                 <img src={HomeIcon} alt="Home" />
             </Link>
@@ -21,6 +22,7 @@ const Footer: React.FC = () => {
             </div>
             <div className="profile-icon">
                 <img src={ProfileIcon} alt="Profile" />
+            </div>
             </div>
         </footer>
     );

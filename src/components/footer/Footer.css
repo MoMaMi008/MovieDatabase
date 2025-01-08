@@ -2,7 +2,17 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-top: 60px;
-    margin-right: 20px;
-    margin-left: 20px;
+    padding: 10px 0;
+    background-color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+.footer-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 40px;
 }

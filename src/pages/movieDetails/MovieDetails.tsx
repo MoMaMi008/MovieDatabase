@@ -9,7 +9,7 @@ import YouTubeIcon from "/Users/supercoder/Desktop/MovieAppReactFinal/src/assets
 import { useState } from "react";
 import Footer from "../../components/footer/Footer";
 
-interface IMovieDetails {
+export interface IMovieDetails {
     id: number;
     title: string;
     poster_path: string;

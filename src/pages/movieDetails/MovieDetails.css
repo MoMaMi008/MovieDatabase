@@ -11,8 +11,10 @@ body {
     flex-direction: column;
     position: relative;
     border: none;
+    min-height: 100%;
 }
 .movie-details {
+    flex: 1;
     margin-top: 350px;
     padding-left: 20px;
     justify-content: center;
@@ -125,4 +127,3 @@ body {
     line-height: 24px;
     margin-left: 10px;
 }
-
