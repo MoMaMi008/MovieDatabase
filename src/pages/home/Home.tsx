@@ -4,6 +4,7 @@ import GenreSlider, { IGenre } from "../../components/genreSlider/GenreSlider";
 import Searchbar from "../../components/searchbar/Searchbar";
 import "./Home.css";
 import TrendingMovies from "../../components/trendingMovies/TrendingMovies";
+import Footer from "../../components/footer/Footer";
 
 interface IHomeProps {
     setInputGenre: React.Dispatch<React.SetStateAction<IGenre>>;
@@ -41,6 +42,7 @@ const Home: FC<IHomeProps> = ({ setInputGenre }) => {
                 <GenreSlider setInputGenre={setInputGenre} />
             </div>
             <TrendingMovies />
+            <Footer />
         </section>
     );
 };

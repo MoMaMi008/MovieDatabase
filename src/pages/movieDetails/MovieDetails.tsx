@@ -5,7 +5,7 @@ import { FaStar, FaCircle } from "react-icons/fa";
 import "./MovieDetails.css";
 import Button from "../../components/button/Button";
 import { getReleasedYear } from "../../utils/functions/Functions";
-import YouTubeIcon from "/Users/supercoder/Desktop/MovieAppReactFinal/src/assets/SVG/youtube.svg";
+import YouTubeIcon from "../../assets/SVG/youtube.svg";
 import { useState } from "react";
 import Footer from "../../components/footer/Footer";
 
@@ -19,7 +19,6 @@ export interface IMovieDetails {
     genres: { id: number; name: string }[];
     runtime: number;
     overview: string;
-    spoken_languages: { english_name: string }[];
     spoken_languages: { english_name: string }[];
 }
 
