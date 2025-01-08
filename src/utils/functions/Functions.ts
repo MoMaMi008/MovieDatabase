@@ -8,3 +8,4 @@ export const formatRuntime = (runtime: number): string => {
   }m`;
   return formattedRuntime;
 };
+

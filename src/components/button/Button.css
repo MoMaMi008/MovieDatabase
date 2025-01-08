@@ -14,4 +14,10 @@
     font-family: 'Poppins-regular';
     border-radius: 10px;
     border: none;
+    font-size: 18px;
+    line-height: 27px;
+}
+.button-icon {
+    width: 16.55px;
+    height: 15.05px;
 }

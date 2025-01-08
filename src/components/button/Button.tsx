@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC} from "react";
 import "./Button.css";
 import { useNavigate } from "react-router-dom";
 
@@ -17,7 +17,7 @@ const Button: FC<ButtonProps> = ({ img_path, text, link_path }) => {
 
     return (
         <button className="button" onClick={handleClick}>
-            {img_path && <img src={img_path} alt="button symbol" />}
+            {img_path && <img src={img_path} alt="button symbol" className="button-icon" />}
             <p>{text}</p>
         </button>
     );

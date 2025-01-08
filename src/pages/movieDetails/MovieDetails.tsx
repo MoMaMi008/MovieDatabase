@@ -6,6 +6,7 @@ import "./MovieDetails.css";
 import Button from "../../components/button/Button";
 import { getReleasedYear } from "../../utils/functions/Functions";
 import YouTubeIcon from "/Users/supercoder/Desktop/MovieAppReactFinal/src/assets/SVG/youtube.svg";
+import { useState } from "react";
 
 interface IMovieDetails {
     id: number;
@@ -24,9 +25,22 @@ const MovieDetails: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const { data: movie, loading } = useFetch<IMovieDetails>(getDetailsUrl(Number(id)), OPTIONS);
 
+    const [showFullOverview, setShowFullOverview] = useState(false)
+
     if (loading || !movie) return <div>Loading...</div>;
 
     const backdropUrl = `https://image.tmdb.org/t/p/original${movie.backdrop_path}`;
+
+    const toggleOverview = () => {
+        setShowFullOverview(!showFullOverview)
+    };
+
+    const getShortOverview = (overview: string) => {
+        if (overview.length > 150 && !showFullOverview) {
+            return `${overview.substring(0, 150)}...`; 
+        }
+        return overview; 
+    };
 
     return (
         <div className="movie-details-container" style={{ backgroundImage: `url(${backdropUrl})` }}>
@@ -58,8 +72,19 @@ const MovieDetails: React.FC = () => {
 
                 <div className="overview">
                     <h2>Overview</h2>
-                    <p>{movie.overview}</p>
+                    <p>
+                        {getShortOverview(movie.overview)}
+                        {!showFullOverview && (
+                            <button onClick={toggleOverview} className="see-more"> See more...</button>
+                        )}
+                        {showFullOverview && (
+                            <>
+                                <button onClick={toggleOverview} className="see-less"> See less...</button>
+                            </>
+                        )}
+                    </p>
                 </div>
+
                 <div className="gen-lang">
                     <div className="genres">
                         <h2>Genres</h2>
@@ -71,7 +96,11 @@ const MovieDetails: React.FC = () => {
                     </div>
                 </div>
                 <div className="movie-actions">
-                    <Button text="Watch Trailer" icon={<img src={YouTubeIcon} alt="Youtube Icon" className="button-icon" />} link_path={`/trailer/${id}`} />
+                    <Button 
+                    text="Watch Trailer" 
+                    img_path={YouTubeIcon}
+                    link_path={`/trailer/${id}`}
+                    />
                 </div>
             </div>
         </div>

@@ -10,6 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
+    border: none;
 }
 .movie-details {
     margin-top: 350px;
@@ -39,6 +40,8 @@ body {
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 20px;
+    font-family: 'Poppins-regular';
+    margin-right: 10px;
 }
 .gen-lang {
     display: flex;
@@ -63,6 +66,7 @@ body {
     font-size: 16px;
     line-height: 24px;
     margin-right: 15px;
+    font-family: 'Poppins-regular';
 }
 .gradient-overlay {
     position: absolute;
@@ -111,3 +115,14 @@ body {
     font-weight: 400;
     font-size: 16px;
 }
+.see-more,
+.see-less {
+    background-color: white;
+    border: none;
+    color: #ff0000;
+    font-size: 16px;
+    font-family: 'Poppins-regular';
+    line-height: 24px;
+    margin-left: 10px;
+}
+
