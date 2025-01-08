@@ -11,7 +11,7 @@ export const OPTIONS = {
 export const chosenLanguage = "en-US";
 
 export const getTrendingUrl = (): string => {
-  const resultUrl = `${BASE_URL}movie/trending/movie/day?language=${chosenLanguage}`;
+  const resultUrl = `${BASE_URL}trending/movie/day?language=${chosenLanguage}`;
   return resultUrl;
 };
 
@@ -36,6 +36,6 @@ export const getMovieListUrl = (genreId: number, page: number = 1): string => {
 };
 
 export const getMovieImage = (image_path: string) => {
-    const resultUrl = `https://image.tmdb.org/t/p/original${image_path}`;
-    return resultUrl;
+  const resultUrl = `https://image.tmdb.org/t/p/original${image_path}`;
+  return resultUrl;
 };
