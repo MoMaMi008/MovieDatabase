@@ -3,7 +3,7 @@ import { IMovieHome, ISearchData } from "../../pages/home/Home";
 import { getMovieListUrl, OPTIONS } from "../../utils/api/Api";
 import { FC, useEffect, useState } from "react";
 import "./MovieList.css";
-import { Link } from "react-router-dom";
+
 import { IGenre } from "../genreSlider/GenreSlider";
 import MovieCard from "../movieCard/MovieCard";
 
