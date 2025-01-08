@@ -1,0 +1,18 @@
+.splashScreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fc2121;
+    z-index: 2;
+}
+
+.splashScreen p {
+    font-family: Montserrat-800;
+    font-size: 2.75rem;
+    color: white;
+}
