@@ -16,11 +16,13 @@ const MovieList: FC<IMovieListProps> = ({ inputGenre }) => {
   const [movies, setMovies] = useState<IMovieHome[]>([]);
   const [page, setPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(0);
+  const [shouldFetch, setShouldFetch] = useState<boolean>(true);
 
   const { data } = useFetch<ISearchData>(
-    getMovieListUrl(inputGenre?.id, page),
+    shouldFetch ? getMovieListUrl(inputGenre?.id, page) : "",
     OPTIONS
   );
+  console.log("moviesArray", movies);
 
   useEffect(() => {
     if (data) {
@@ -28,16 +30,19 @@ const MovieList: FC<IMovieListProps> = ({ inputGenre }) => {
         page === 1 ? data.results : [...prevMovies, ...data.results]
       );
       setTotalPages(data.total_pages);
+      setShouldFetch(false); // Disable fetch after initial load
     }
-  }, [data, page]);
+  }, [data]);
 
   useEffect(() => {
     setMovies([]);
     setPage(1);
+    setShouldFetch(true); // Enable fetch for new genre
   }, [inputGenre]);
 
   const loadMoreMovies = () => {
     setPage((prevPage) => prevPage + 1);
+    setShouldFetch(true); // Enable fetch for next page
   };
 
   return (
