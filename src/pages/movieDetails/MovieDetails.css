@@ -1,0 +1,113 @@
+body {
+    font-family: 'Poppins-regular', 'Poppins-700', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.movie-details-container {
+    height: 45vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.movie-details {
+    margin-top: 350px;
+    padding-left: 20px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.movie-details h2 {
+    font-size: 16px;
+    line-height: 24px;
+}
+.movie-name {
+    font-size: 28px;
+    font-family: 'Poppins-700';
+    line-height: 42px;
+}
+.overview h2 {
+    font-size: 20px;
+    font-family: 'Poppins-700';
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 30px;
+}
+.overview p {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+.gen-lang {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.genres,
+.languages {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 10px;
+}
+.genres h2, 
+.languages h2 {
+    font-size: 16px;
+    font-family: 'Poppins-700';
+}
+.genres p, 
+.languages p {
+    font-size: 16px;
+    line-height: 24px;
+    margin-right: 15px;
+}
+.gradient-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+    pointer-events: none;
+}
+.movie-details {
+    position: relative;
+    z-index: 1;
+}
+.star-icon {
+    align-self: center;
+    color: #ffd500;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.separator {
+    font-size: 6px;
+    align-self: center;
+    color: black;
+    margin-right: 5px;
+}
+.movie-info {
+    display: flex;
+    align-items: center;
+    font-size: 16px ;
+    justify-content: center;
+}
+.info-group {
+    display: flex;
+    align-items: center;
+    margin: 0 5px;
+}
+.rating-value {
+    font-family: 'Poppins-700';
+    font-size: 16px;
+}
+.date, .genre, .duration {
+    font-family: 'Poppins-regular';
+    font-weight: 400;
+    font-size: 16px;
+}
