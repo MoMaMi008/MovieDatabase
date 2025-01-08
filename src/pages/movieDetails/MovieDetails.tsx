@@ -7,6 +7,7 @@ import Button from "../../components/button/Button";
 import { getReleasedYear } from "../../utils/functions/Functions";
 import YouTubeIcon from "/Users/supercoder/Desktop/MovieAppReactFinal/src/assets/SVG/youtube.svg";
 import { useState } from "react";
+import Footer from "../../components/footer/Footer";
 
 interface IMovieDetails {
     id: number;
@@ -103,6 +104,7 @@ const MovieDetails: React.FC = () => {
                     />
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 };
