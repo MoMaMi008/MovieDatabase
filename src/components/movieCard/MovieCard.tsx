@@ -3,7 +3,13 @@ import { IMovieHome } from "../../pages/home/Home";
 import "./MovieCard.css";
 import BookmarkIcon from "../../assets/SVG/BookmarkIcon";
 import { IGenre } from "../genreSlider/GenreSlider";
-import { getReleasedYear } from "../../utils/functions/Functions";
+import {
+  formatRuntime,
+  getReleasedYear,
+} from "../../utils/functions/Functions";
+import useFetch from "../../hooks/useFetch";
+import { getDetailsUrl, OPTIONS } from "../../utils/api/Api";
+import { IMovieDetails } from "../../pages/movieDetails/MovieDetails";
 
 interface IMovieCardProps {
   singleMovie: IMovieHome;
@@ -11,6 +17,13 @@ interface IMovieCardProps {
 }
 
 const MovieCard: FC<IMovieCardProps> = ({ singleMovie, inputGenre }) => {
+  const { data } = useFetch<IMovieDetails>(
+    getDetailsUrl(singleMovie.id),
+    OPTIONS
+  );
+
+  if (!data) return "";
+
   return (
     <article className="movie-card">
       <img
@@ -35,7 +48,7 @@ const MovieCard: FC<IMovieCardProps> = ({ singleMovie, inputGenre }) => {
           )}
 
           <p>{inputGenre?.name} </p>
-          <p>2h 38m</p>
+          <p>{formatRuntime(data?.runtime)}</p>
         </div>
       </div>
     </article>
