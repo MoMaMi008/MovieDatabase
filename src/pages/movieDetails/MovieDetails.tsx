@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import { getDetailsUrl, OPTIONS } from "../../utils/api/Api";
 import { FaStar, FaCircle } from "react-icons/fa";
@@ -9,6 +9,7 @@ import YouTubeIcon from "../../assets/SVG/youtube.svg";
 import { useState, useEffect } from "react";
 import Footer from "../../components/footer/Footer";
 import { fetchMovieTrailers } from "../../utils/api/Api";
+import FrameIcon from "../../assets/SVG/Frame.svg"
 
 export interface IMovieDetails {
     id: number;
@@ -24,6 +25,7 @@ export interface IMovieDetails {
 }
 
 const MovieDetails: React.FC = () => {
+    const navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
     const { data: movie, loading } = useFetch<IMovieDetails>(getDetailsUrl(Number(id)), OPTIONS);
 
@@ -64,10 +66,18 @@ const MovieDetails: React.FC = () => {
         window.open(trailerUrl, '_blank'); 
     };
 
+    const handleBackClick = () => {
+        navigate(-1); 
+    };
+
+
     return (
         <div className="movie-details-container" style={{ backgroundImage: `url(${backdropUrl})` }}>
             <div className="gradient-overlay"></div>
             <div className="movie-details">
+                <button className="back-button" onClick={handleBackClick}>
+                    <img src={FrameIcon} alt="Back" />
+                </button>
                 <h2>Movie Details</h2>
                 <p className="movie-name">{movie.title}</p>
 
