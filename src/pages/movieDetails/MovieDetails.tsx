@@ -26,21 +26,21 @@ const MovieDetails: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const { data: movie, loading } = useFetch<IMovieDetails>(getDetailsUrl(Number(id)), OPTIONS);
 
-    const [showFullOverview, setShowFullOverview] = useState(false)
+    const [showFullOverview, setShowFullOverview] = useState(false);
 
     if (loading || !movie) return <div>Loading...</div>;
 
     const backdropUrl = `https://image.tmdb.org/t/p/original${movie.backdrop_path}`;
 
     const toggleOverview = () => {
-        setShowFullOverview(!showFullOverview)
+        setShowFullOverview(!showFullOverview);
     };
 
     const getShortOverview = (overview: string) => {
         if (overview.length > 150 && !showFullOverview) {
-            return `${overview.substring(0, 150)}...`; 
+            return `${overview.substring(0, 150)}...`;
         }
-        return overview; 
+        return overview;
     };
 
     return (
@@ -76,11 +76,17 @@ const MovieDetails: React.FC = () => {
                     <p>
                         {getShortOverview(movie.overview)}
                         {!showFullOverview && (
-                            <button onClick={toggleOverview} className="see-more"> See more...</button>
+                            <button onClick={toggleOverview} className="see-more">
+                                {" "}
+                                See more...
+                            </button>
                         )}
                         {showFullOverview && (
                             <>
-                                <button onClick={toggleOverview} className="see-less"> See less...</button>
+                                <button onClick={toggleOverview} className="see-less">
+                                    {" "}
+                                    See less...
+                                </button>
                             </>
                         )}
                     </p>
@@ -97,14 +103,10 @@ const MovieDetails: React.FC = () => {
                     </div>
                 </div>
                 <div className="movie-actions">
-                    <Button 
-                    text="Watch Trailer" 
-                    img_path={YouTubeIcon}
-                    link_path={`/trailer/${id}`}
-                    />
+                    <Button text="Watch Trailer" img_path={YouTubeIcon} link_path={`/trailer/${id}`} />
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </div>
     );
 };

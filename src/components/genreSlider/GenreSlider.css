@@ -18,9 +18,6 @@
   text-decoration: none;
 }
 .inner-genre-slider button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: #fbf8ff;
   padding: 1rem 2rem;
   color: #000000;

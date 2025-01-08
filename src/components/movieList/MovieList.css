@@ -15,3 +15,20 @@
   text-decoration: none;
   color: #000000;
 }
+.load-more-button {
+  background-color: #fbf8ff;
+  align-self: center;
+  padding: 1rem 2rem;
+  color: #000000;
+  font-family: Poppins-500;
+  border-radius: 0.625rem;
+  border: none;
+  width: fit-content;
+  white-space: nowrap;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.load-more-button:hover {
+  background-color: #fc2121;
+  color: white;
+}
