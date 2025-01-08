@@ -3,11 +3,15 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
+    width: 226px;
+    height: 57px;
     background-color: #fc2121;
-    padding: 1rem 3.125rem;
+    padding-top: 15px;
+    padding-right: 35px;
+    padding-bottom: 15px;
+    padding-left: 35px;
     color: white;
-    font-family: Poppins-700;
-    border-radius: 0.625rem;
+    font-family: 'Poppins-regular';
+    border-radius: 10px;
     border: none;
-    width: fit-content;
 }
