@@ -30,7 +30,7 @@ export const getDetailsUrl = (movie_id: number) => {
   return resultUrl;
 };
 
-export const getMovieListUrl = (genreId: number): string => {
-  const resultUrl = `${BASE_URL}discover/movie?&language=${chosenLanguage}&with_genres=${genreId}&page=3`;
+export const getMovieListUrl = (genreId: number, page: number = 1): string => {
+  const resultUrl = `${BASE_URL}discover/movie?&language=${chosenLanguage}&with_genres=${genreId}&page=${page}`;
   return resultUrl;
 };
