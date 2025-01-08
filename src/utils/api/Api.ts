@@ -31,6 +31,6 @@ export const getDetailsUrl = (movie_id: number) => {
 };
 
 export const getMovieListUrl = (genreId: number): string => {
-  const resultUrl = `${BASE_URL}discover/movie?&language=${chosenLanguage}&with_genres=${genreId}`;
+  const resultUrl = `${BASE_URL}discover/movie?&language=${chosenLanguage}&with_genres=${genreId}&page=3`;
   return resultUrl;
 };
