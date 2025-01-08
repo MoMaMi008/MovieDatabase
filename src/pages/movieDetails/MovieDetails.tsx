@@ -6,8 +6,9 @@ import "./MovieDetails.css";
 import Button from "../../components/button/Button";
 import { getReleasedYear } from "../../utils/functions/Functions";
 import YouTubeIcon from "../../assets/SVG/youtube.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Footer from "../../components/footer/Footer";
+import { fetchMovieTrailers } from "../../utils/api/Api";
 
 export interface IMovieDetails {
     id: number;
@@ -27,6 +28,22 @@ const MovieDetails: React.FC = () => {
     const { data: movie, loading } = useFetch<IMovieDetails>(getDetailsUrl(Number(id)), OPTIONS);
 
     const [showFullOverview, setShowFullOverview] = useState(false);
+    
+    const [trailerUrl, setTrailerUrl] = useState('');
+
+    useEffect(() => {
+        const fetchTrailer = async () => {
+            try {
+                const trailers = await fetchMovieTrailers(Number(id)); 
+                if (trailers.length > 0) {
+                    setTrailerUrl(`https://www.youtube.com/watch?v=${trailers[0].key}`); 
+                }
+            } catch (error) {
+                console.error("Error fetching trailers:", error);
+            }
+        };
+        fetchTrailer();
+    }, [id]);
 
     if (loading || !movie) return <div>Loading...</div>;
 
@@ -41,6 +58,10 @@ const MovieDetails: React.FC = () => {
             return `${overview.substring(0, 150)}...`;
         }
         return overview;
+    };
+
+    const handleTrailerClick = () => {
+        window.open(trailerUrl, '_blank'); 
     };
 
     return (
@@ -102,8 +123,9 @@ const MovieDetails: React.FC = () => {
                         <p>{movie.spoken_languages.map((lang) => lang.english_name).join(", ")}</p>
                     </div>
                 </div>
+
                 <div className="movie-actions">
-                    <Button text="Watch Trailer" img_path={YouTubeIcon} link_path={`/trailer/${id}`} />
+                    <Button text="Watch Trailer" img_path={YouTubeIcon} onClick={handleTrailerClick} />
                 </div>
             </div>
             <Footer />

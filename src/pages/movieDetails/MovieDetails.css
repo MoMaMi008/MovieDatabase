@@ -130,3 +130,6 @@ body {
     max-height: 200px;
     overflow-y: auto;
 }
+.movie-actions a {
+    text-decoration: none;
+}
