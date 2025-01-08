@@ -19,7 +19,6 @@ const MovieList: FC<IMovieListProps> = ({ inputGenre }) => {
 
   const fetchUrl = shouldFetch ? getMovieListUrl(inputGenre?.id, page) : null;
   const { data } = useFetch<ISearchData>(fetchUrl, OPTIONS);
-  console.log("moviesArray", movies);
 
   useEffect(() => {
     if (data) {
@@ -45,9 +44,11 @@ const MovieList: FC<IMovieListProps> = ({ inputGenre }) => {
   return (
     <section className="movie-genre-list">
       {movies.map((singleMovie: IMovieHome) => (
-        <Link to={`/movie/${singleMovie.id}`} key={singleMovie.id}>
-          <MovieCard singleMovie={singleMovie} inputGenre={inputGenre} />
-        </Link>
+        <MovieCard
+          singleMovie={singleMovie}
+          inputGenre={inputGenre}
+          key={singleMovie.id}
+        />
       ))}
       {page < totalPages && (
         <button onClick={loadMoreMovies} className="load-more-button">

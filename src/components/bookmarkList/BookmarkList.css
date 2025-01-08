@@ -1,0 +1,17 @@
+.bookmark-list {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 38rem;
+  overflow-y: scroll;
+  scrollbar-width: none; /* For Firefox */
+}
+/* For WebKit-based browsers (Chrome, Safari) */
+.bookmark-list::-webkit-scrollbar {
+  display: none;
+}
+.bookmark-list a {
+  text-decoration: none;
+  color: #000000;
+}

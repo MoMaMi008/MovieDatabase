@@ -1,0 +1,41 @@
+.bookmarks {
+  width: 428px;
+  height: 926px;
+  margin: 0 auto;
+  padding: 4rem 1.7rem 0 1.7rem;
+  border: 1px solid brown;
+}
+
+.bookmarks h1 {
+  font-family: Poppins-700, Helvetica;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.no-bookmarks-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 70%;
+  gap: 0.5rem;
+  text-align: center;
+  margin: 5rem auto;
+}
+.bookmark-icon-box svg {
+  width: 3rem;
+  height: auto;
+  stroke: #97aabd76;
+  fill: none;
+}
+.bookmark-icon-box {
+  margin-bottom: 0.6rem;
+}
+.no-bookmarks-box .main-text {
+  font-family: Poppins-700;
+  font-size: 1.2rem;
+  color: rgb(180, 180, 180);
+}
+.no-bookmarks-box .sub-text {
+  color: rgb(189, 189, 189);
+}
