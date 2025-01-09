@@ -19,7 +19,9 @@ const Footer: React.FC = () => {
                     <img src={isHome ? HomeIcon : DefaultHomeIcon} alt="Home" />
                 </Link>
                 <div className="bookmark-icon">
-                    <img src={BookMarkIcon} alt="Bookmarks" />
+                    <Link to="/bookmarks">
+                        <img src={BookMarkIcon} alt="Bookmarks" />
+                    </Link>
                 </div>
                 <div className="vector-icon">
                     <img src={VectorIcon} alt="Vector" />
