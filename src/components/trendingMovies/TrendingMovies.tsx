@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import useFetch from "../../hooks/useFetch";
-import { getMovieImage, OPTIONS } from "../../utils/api/Api";
+import { getMovieImage, getTrendingUrl, OPTIONS } from "../../utils/api/Api";
 import { IMovieHome, ISearchData } from "../../pages/home/Home";
 
 import { Autoplay, Pagination, Virtual } from "swiper/modules";
@@ -10,7 +10,7 @@ import "swiper/css/virtual";
 import "./TrendingMovies.css";
 
 const TrendingMovies = () => {
-    const { data } = useFetch<ISearchData>("https://api.themoviedb.org/3/movie/popular", OPTIONS);
+    const { data } = useFetch<ISearchData>(getTrendingUrl(), OPTIONS);
     const [slicedData, setSlicedData] = useState<IMovieHome[]>([]);
 
     const progressCircle = useRef<HTMLElement | null>(null);
@@ -30,13 +30,19 @@ const TrendingMovies = () => {
 
     return (
         <section className="trendingMovies">
-            <h2>Trending Movies</h2>
+            <div className="head-textbox">
+                <h2>Trending Movies</h2> <p>See all</p>
+            </div>
             {slicedData.length != 0 && (
                 <Swiper modules={[Autoplay, Virtual, Pagination]} slidesPerView={1} spaceBetween={50} autoplay={{ delay: 10000 }} loop={true} virtual pagination={{ clickable: false }} onAutoplayTimeLeft={onAutoplayTimeLeft}>
                     {slicedData.map((movie, index) => (
                         <SwiperSlide className="slide" key={index} virtualIndex={index}>
                             <article>
-                                <img src={getMovieImage(movie.poster_path)} alt={`Movieposter of ${movie.title}`} />
+                                <img src={getMovieImage(movie.backdrop_path)} alt={`Movieposter of ${movie.title}`} />
+                                <div className="swiper-textbox">
+                                    <p className="title">{movie.title}</p>
+                                    <p className="rate">⭐{movie.vote_average.toFixed(1)}/10.0</p>
+                                </div>
                             </article>
                         </SwiperSlide>
                     ))}

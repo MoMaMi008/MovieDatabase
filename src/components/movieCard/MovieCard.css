@@ -9,12 +9,11 @@
   text-decoration: underline;
 }
 .movie-card img {
-  width: 20%;
-  border-radius: 15px;
+  width: 100%;
+  border-radius: 10px;
 }
 .movie-card .img-wrapper {
-  width: 100%;
-  height: 100%;
+  width: 20%;
 }
 .movie-card .textbox-wrapper {
   display: flex;
@@ -28,7 +27,12 @@
 
   height: 4.2rem;
 }
-
+.card-top-textbox a {
+  width: 100%;
+}
+.card-top-textbox p {
+  width: 97%;
+}
 .card-bottom-textbox {
   display: flex;
   gap: 10px;

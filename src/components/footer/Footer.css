@@ -8,11 +8,12 @@
     left: 0;
     bottom: 0;
     width: 100%;
+    z-index: 1;
 }
+
 .footer-icons {
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    margin-top: 40px;
 }

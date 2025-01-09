@@ -46,16 +46,15 @@ const MovieCard: FC<IMovieCardProps> = ({ singleMovie, inputGenre }) => {
     (bookmarkedMovie) => bookmarkedMovie.id === singleMovie.id
   );
 
-  console.log("Bookmarks Array", bookmarks);
-
   return (
     <article className="movie-card">
-      {/* <Link to={`/movie/${singleMovie.id}` className="img-wrapper"}> */}{" "}
-      <img
-        src={`https://image.tmdb.org/t/p/w500${singleMovie.poster_path}`}
-        alt={singleMovie.title}
-      />
-      {/* </Link> */}
+      <Link to={`/movie/${singleMovie.id}`} className="img-wrapper">
+        <img
+          src={`https://image.tmdb.org/t/p/w500${singleMovie.poster_path}`}
+          alt={singleMovie.title}
+        />
+      </Link>
+
       <div className="textbox-wrapper">
         <div className="card-top-textbox">
           <Link to={`/movie/${singleMovie.id}`}>
