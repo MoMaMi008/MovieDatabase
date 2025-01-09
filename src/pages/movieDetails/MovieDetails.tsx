@@ -75,12 +75,11 @@ const MovieDetails: React.FC = () => {
 
   return (
     <section className="movie-details-container">
-      <div
-        className="box-bg"
-        style={{ backgroundImage: `url(${backdropUrl})` }}
-      >
+      <div className="box-backdrop">
+        <img src={backdropUrl} alt="movie backdrop" className="img-backdrop" />{" "}
         <div className="gradient-overlay"></div>
       </div>
+
       <div className="movie-details">
         <button className="back-button" onClick={handleBackClick}>
           <img src={FrameIcon} alt="Back" />
@@ -92,9 +91,7 @@ const MovieDetails: React.FC = () => {
           <div className="info-group">
             <FaStar className="star-icon" />
             <span className="rating-value">
-              {movie.vote_average
-                ? movie.vote_average.toFixed(1)
-                : "Keine Bewertung"}
+              {movie.vote_average ? movie.vote_average.toFixed(1) : ""}
             </span>
           </div>
           <div className="info-group">

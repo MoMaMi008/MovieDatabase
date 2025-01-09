@@ -3,24 +3,45 @@ body {
 }
 .movie-details-container {
   width: 428px;
-  height: 100vh;
-  /* height: 920px; */
+  /* height: 100vh; */
+  height: 920px;
   border: 1px solid brown;
   display: flex;
   flex-direction: column;
   position: relative;
 }
-.box-bg {
+.box-backdrop {
   width: 428px;
   height: 430px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+.box-backdrop .img-backdrop {
+  height: 430px;
+}
+.gradient-overlay {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 428px;
+  height: 386px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  pointer-events: none;
+}
+
 .movie-details {
   position: relative;
+  bottom: 4rem;
   flex: 1;
-  margin: 0 auto;
+  margin-bottom: 7rem;
 
   justify-content: center;
   display: flex;
@@ -78,20 +99,7 @@ body {
 
   font-family: "Poppins-regular";
 }
-.gradient-overlay {
-  z-index: 10;
-  position: absolute;
-  bottom: 30rem;
-  left: 0;
-  right: 0;
-  height: 40%;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 1) 100%
-  );
-  pointer-events: none;
-}
+
 .movie-details {
   position: relative;
   z-index: 1;
