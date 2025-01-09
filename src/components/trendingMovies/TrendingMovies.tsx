@@ -16,7 +16,7 @@ const TrendingMovies = () => {
 
     const progressCircle = useRef<SVGSVGElement | null>(null);
     const progressContent = useRef<HTMLElement | null>(null);
-    // in der folgenden Funktion, wird der erste parameter nicht benötigt. die schreibweise "_" oder "_unknown" ist üblich, um dies zu signalisieren. auch typescript ist mit diesen beiden schreibweisen vertraut und wirft keinen fehler.
+    // in der folgenden Funktion, wird der erste parameter nicht benötigt. die schreibweise "_" oder "_unused" ist üblich, um dies zu signalisieren. auch typescript ist mit diesen beiden schreibweisen vertraut und wirft keinen fehler.
     const onAutoplayTimeLeft = (_unused: unknown, time: number, progress: number) => {
         progressCircle.current!.style.setProperty("--progress", String(1 - progress));
         progressContent.current!.textContent = `${Math.ceil(time / 1000)}s`;
