@@ -39,3 +39,13 @@ export const getMovieImage = (image_path: string) => {
   const resultUrl = `https://image.tmdb.org/t/p/original${image_path}`;
   return resultUrl;
 };
+export const fetchMovieTrailers = async (movieId: number) => {
+  const response = await fetch(`${BASE_URL}movie/${movieId}/videos?language=${chosenLanguage}`, OPTIONS);
+
+  if (!response.ok) {
+      throw new Error('Failed to fetch trailers');
+  }
+  const data = await response.json();
+  return data.results; 
+};
+

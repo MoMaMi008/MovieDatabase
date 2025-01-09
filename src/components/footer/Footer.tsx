@@ -1,11 +1,12 @@
 import "./Footer.css";
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import HomeIcon from "../../assets/SVG/Home.svg";
+import DefaultHomeIcon from "../../assets/SVG/Home.svg";
 import VectorIcon from "../../assets/SVG/Vector.svg";
 import ProfileIcon from "../../assets/SVG/Profile.svg";
 import "./Footer.css";
 import BookMarkIcon from "../../assets/SVG/bookMark.svg";
+import HomeIcon from "../../assets/SVG/homered.svg";
 
 const Footer: React.FC = () => {
     const location = useLocation();
@@ -15,7 +16,7 @@ const Footer: React.FC = () => {
         <footer className="footer">
             <div className="footer-icons">
                 <Link to="/home" className="home-icon">
-                    <img src={HomeIcon} alt="Home" style={{ fill: isHome ? "red" : "#97AABD" }} />
+                    <img src={isHome ? HomeIcon : DefaultHomeIcon} alt="Home" />
                 </Link>
                 <div className="bookmark-icon">
                     <img src={BookMarkIcon} alt="Bookmarks" />

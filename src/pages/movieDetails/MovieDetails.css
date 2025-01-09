@@ -4,7 +4,7 @@ body {
     padding: 0;
 }
 .movie-details-container {
-    height: 45vh;
+    height: 48vh;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -12,6 +12,7 @@ body {
     position: relative;
 }
 .movie-details {
+    position: relative;
     flex: 1;
     margin-top: 350px;
     padding-left: 20px;
@@ -129,4 +130,12 @@ body {
 .overview {
     max-height: 200px;
     overflow-y: auto;
+}
+.movie-actions a {
+    text-decoration: none;
+}
+.back-button {
+    width: 39.13px;
+    height: 39.72px;
+    background-color: #ffffff;
 }
