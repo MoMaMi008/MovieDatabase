@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/bundle";
 import "swiper/css/virtual";
 import "./TrendingMovies.css";
+import { Link } from "react-router-dom";
 
 const TrendingMovies = () => {
     const { data } = useFetch<ISearchData>(getTrendingUrl(), OPTIONS);
@@ -38,11 +39,13 @@ const TrendingMovies = () => {
                     {slicedData.map((movie, index) => (
                         <SwiperSlide className="slide" key={index} virtualIndex={index}>
                             <article>
-                                <img src={getMovieImage(movie.backdrop_path)} alt={`Movieposter of ${movie.title}`} />
-                                <div className="swiper-textbox">
-                                    <p className="title">{movie.title}</p>
-                                    <p className="rate">⭐{movie.vote_average.toFixed(1)}/10.0</p>
-                                </div>
+                                <Link to={`/movie/${movie.id}`}>
+                                    <img src={getMovieImage(movie.backdrop_path)} alt={`Movieposter of ${movie.title}`} />
+                                    <div className="swiper-textbox">
+                                        <p className="title">{movie.title}</p>
+                                        <p className="rate">⭐{movie.vote_average.toFixed(1)}/10.0</p>
+                                    </div>
+                                </Link>
                             </article>
                         </SwiperSlide>
                     ))}
