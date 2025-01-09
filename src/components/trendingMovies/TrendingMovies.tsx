@@ -1,21 +1,27 @@
+//React import
 import { useEffect, useRef, useState } from "react";
+// React-Router-Dom import
+import { Link } from "react-router-dom";
+// eigene imports
 import useFetch from "../../hooks/useFetch";
 import { getMovieImage, getTrendingUrl, OPTIONS } from "../../utils/api/Api";
 import { IMovieHome, ISearchData } from "../../pages/home/Home";
-
+// Swiper imports
 import { Autoplay, Pagination, Virtual } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/bundle";
 import "swiper/css/virtual";
+// css import
 import "./TrendingMovies.css";
 
 const TrendingMovies = () => {
     const { data } = useFetch<ISearchData>(getTrendingUrl(), OPTIONS);
     const [slicedData, setSlicedData] = useState<IMovieHome[]>([]);
 
-    const progressCircle = useRef<HTMLElement | null>(null);
+    const progressCircle = useRef<SVGSVGElement | null>(null);
     const progressContent = useRef<HTMLElement | null>(null);
-    const onAutoplayTimeLeft = (s: unknown, time: number, progress: number) => {
+    // in der folgenden Funktion, wird der erste parameter nicht benötigt. die schreibweise "_" oder "_unused" ist üblich, um dies zu signalisieren. auch typescript ist mit diesen beiden schreibweisen vertraut und wirft keinen fehler.
+    const onAutoplayTimeLeft = (_unused: unknown, time: number, progress: number) => {
         progressCircle.current!.style.setProperty("--progress", String(1 - progress));
         progressContent.current!.textContent = `${Math.ceil(time / 1000)}s`;
     };
@@ -38,11 +44,13 @@ const TrendingMovies = () => {
                     {slicedData.map((movie, index) => (
                         <SwiperSlide className="slide" key={index} virtualIndex={index}>
                             <article>
-                                <img src={getMovieImage(movie.backdrop_path)} alt={`Movieposter of ${movie.title}`} />
-                                <div className="swiper-textbox">
-                                    <p className="title">{movie.title}</p>
-                                    <p className="rate">⭐{movie.vote_average.toFixed(1)}/10.0</p>
-                                </div>
+                                <Link to={`/movie/${movie.id}`}>
+                                    <img src={getMovieImage(movie.backdrop_path)} alt={`Movieposter of ${movie.title}`} />
+                                    <div className="swiper-textbox">
+                                        <p className="title">{movie.title}</p>
+                                        <p className="rate">⭐{movie.vote_average.toFixed(1)}/10.0</p>
+                                    </div>
+                                </Link>
                             </article>
                         </SwiperSlide>
                     ))}
