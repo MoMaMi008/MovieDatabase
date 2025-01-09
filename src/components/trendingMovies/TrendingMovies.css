@@ -1,65 +1,105 @@
+.head-textbox h2 {
+  font-family: Poppins-700;
+}
+.head-textbox p {
+  color: #fc2121;
+}
+.head-textbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  margin-top: 5rem;
+}
+.swiper-textbox {
+  background: rgb(28, 15, 15);
+  background: linear-gradient(
+    0deg,
+    rgba(28, 15, 15, 1) 11%,
+    rgba(255, 241, 212, 0) 100%
+  );
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+  position: absolute;
+  bottom: -1rem;
+  width: 100%;
+  border-radius: 10px;
+}
+.swiper-textbox .title {
+  align-self: center;
+  font-weight: 800;
+}
+.swiper-textbox .rate {
+  align-self: flex-end;
+}
 .trendingMovies article {
-    height: 100%;
+  height: 100%;
+  position: relative;
 }
 
 .trendingMovies img {
-    width: 100%;
-    border-radius: 10px;
+  width: 100%;
+
+  border-radius: 10px;
 }
 
 .swiper {
-    border-radius: 10px !important;
+  border-radius: 10px !important;
 }
 .swiper-pagination {
-    position: absolute;
-    transition: 300ms opacity;
-    z-index: 10;
-    display: block;
-    margin: 0 auto;
-    width: fit-content;
-    border-radius: 10px;
-    padding: 0 15px;
+  position: absolute;
+  transition: 300ms opacity;
+  z-index: 10;
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+  border-radius: 10px;
+  padding: 0 15px;
 }
 
 .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal {
-    bottom: 29px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: unset;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: unset;
 }
 .swiper-pagination-bullet {
-    background: #ffffff;
+  background: #ffffff;
 }
 .swiper-pagination-bullet-active {
-    background: var(--swiper-theme-color);
+  background: #fc2121;
 }
 .autoplay-progress {
-    position: absolute;
-    right: 16px;
-    bottom: 16px;
-    z-index: 10;
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: var(--swiper-theme-color);
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #ffffff;
 }
 
 .autoplay-progress svg {
-    --progress: 0;
-    position: absolute;
-    left: 0;
-    top: 0px;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    stroke-width: 4px;
-    stroke: var(--swiper-theme-color);
-    fill: none;
-    stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
-    stroke-dasharray: 125.6;
-    transform: rotate(-90deg);
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: #fc2121;
+  fill: none;
+  stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
 }

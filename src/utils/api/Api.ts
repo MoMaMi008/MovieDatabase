@@ -11,7 +11,7 @@ export const OPTIONS = {
 export const chosenLanguage = "en-US";
 
 export const getTrendingUrl = (): string => {
-  const resultUrl = `${BASE_URL}trending/movie/day?language=${chosenLanguage}`;
+  const resultUrl = `${BASE_URL}trending/movie/week?language=${chosenLanguage}`;
   return resultUrl;
 };
 

@@ -33,7 +33,9 @@ const TrendingMovies = () => {
 
   return (
     <section className="trendingMovies">
-      <h2>Trending Movies</h2>
+      <div className="head-textbox">
+        <h2>Trending Movies</h2> <p>See all</p>
+      </div>
       {slicedData.length != 0 && (
         <Swiper
           modules={[Autoplay, Virtual, Pagination]}
@@ -49,9 +51,13 @@ const TrendingMovies = () => {
             <SwiperSlide className="slide" key={index} virtualIndex={index}>
               <article>
                 <img
-                  src={getMovieImage(movie.poster_path)}
+                  src={getMovieImage(movie.backdrop_path)}
                   alt={`Movieposter of ${movie.title}`}
                 />
+                <div className="swiper-textbox">
+                  <p className="title">{movie.title}</p>
+                  <p className="rate">⭐{movie.vote_average.toFixed(1)}/10.0</p>
+                </div>
               </article>
             </SwiperSlide>
           ))}
