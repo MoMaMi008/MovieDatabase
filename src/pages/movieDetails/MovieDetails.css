@@ -3,8 +3,8 @@ body {
 }
 .movie-details-container {
   width: 428px;
-  /* height: 100vh; */
-  height: 920px;
+  height: 100vh;
+
   border: 1px solid brown;
   display: flex;
   flex-direction: column;
@@ -28,7 +28,7 @@ body {
   left: 0;
   right: 0;
   width: 428px;
-  height: 386px;
+  height: 431px;
   background: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 0) 0%,
@@ -38,21 +38,31 @@ body {
 }
 
 .movie-details {
+  overflow-y: scroll;
   position: relative;
-  bottom: 4rem;
-  flex: 1;
-  margin-bottom: 7rem;
+  z-index: 1;
+}
 
-  justify-content: center;
+.overlap-textbox {
+  position: relative;
+  bottom: 6rem;
+  z-index: 5;
+  justify-content: flex-start;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.center {
+  text-align: center;
 }
 .movie-details h2 {
   font-size: 16px;
   line-height: 24px;
 }
 .movie-name {
+  text-align: center;
   font-size: 28px;
   font-family: "Poppins-700";
   line-height: 42px;
@@ -100,12 +110,6 @@ body {
   font-family: "Poppins-regular";
 }
 
-.movie-details {
-  position: relative;
-  z-index: 1;
-  padding-right: 15px;
-  padding-left: 15px;
-}
 .star-icon {
   align-self: center;
   color: #ffd500;

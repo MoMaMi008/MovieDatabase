@@ -78,84 +78,91 @@ const MovieDetails: React.FC = () => {
 
   return (
     <section className="movie-details-container">
-      <div className="box-backdrop">
-        <img src={backdropUrl} alt="movie backdrop" className="img-backdrop" />{" "}
-        <div className="gradient-overlay"></div>
-      </div>
-
       <div className="movie-details">
+        <div className="box-backdrop">
+          <img
+            src={backdropUrl}
+            alt="movie backdrop"
+            className="img-backdrop"
+          />{" "}
+          <div className="gradient-overlay"></div>
+        </div>
         <button className="back-button" onClick={handleBackClick}>
           <img src={FrameIcon} alt="Back" />
         </button>
-        <h2>Movie Details</h2>
-        <p className="movie-name">{movie.title}</p>
+        <article className="overlap-textbox">
+          <h2 className="center">Movie Details</h2>
+          <p className="movie-name">{movie.title}</p>
 
-        <div className="movie-info">
-          <div className="info-group">
-            <FaStar className="star-icon" />
-            <span className="rating-value">
-              {movie.vote_average ? movie.vote_average.toFixed(1) : ""}
-            </span>
+          <div className="movie-info">
+            <div className="info-group">
+              <FaStar className="star-icon" />
+              <span className="rating-value">
+                {movie.vote_average ? movie.vote_average.toFixed(1) : ""}
+              </span>
+            </div>
+            <div className="info-group">
+              <FaCircle className="separator" />
+              <span className="date">
+                {getReleasedYear(movie.release_date)}
+              </span>
+            </div>
+            <div className="info-group">
+              <FaCircle className="separator" />
+              <span className="genre">{movie.genres[0]?.name}</span>
+            </div>
+            <div className="info-group">
+              <FaCircle className="separator" />
+              <span className="duration">
+                {Math.floor(movie.runtime / 60)}h {movie.runtime % 60}m
+              </span>
+            </div>
           </div>
-          <div className="info-group">
-            <FaCircle className="separator" />
-            <span className="date">{getReleasedYear(movie.release_date)}</span>
-          </div>
-          <div className="info-group">
-            <FaCircle className="separator" />
-            <span className="genre">{movie.genres[0]?.name}</span>
-          </div>
-          <div className="info-group">
-            <FaCircle className="separator" />
-            <span className="duration">
-              {Math.floor(movie.runtime / 60)}h {movie.runtime % 60}m
-            </span>
-          </div>
-        </div>
 
-        <div className="overview">
-          <h2>Overview</h2>
-          <p>
-            {getShortOverview(movie.overview)}
-            {!showFullOverview && (
-              <button onClick={toggleOverview} className="see-more">
-                {" "}
-                See more...
-              </button>
-            )}
-            {showFullOverview && (
-              <>
-                <button onClick={toggleOverview} className="see-less">
-                  {" "}
-                  See less...
-                </button>
-              </>
-            )}
-          </p>
-        </div>
-
-        <div className="gen-lang">
-          <div className="genres">
-            <h2 className="mr-15">Genres</h2>
-            <p>{movie.genres.map((genre) => genre.name).join(", ")}</p>
-          </div>
-          <div className="languages">
-            <h2 className="mr-15">Languages</h2>
+          <div className="overview">
+            <h2>Overview</h2>
             <p>
-              {movie.spoken_languages
-                .map((lang) => lang.english_name)
-                .join(", ")}
+              {getShortOverview(movie.overview)}
+              {!showFullOverview && (
+                <button onClick={toggleOverview} className="see-more">
+                  {" "}
+                  See more...
+                </button>
+              )}
+              {showFullOverview && (
+                <>
+                  <button onClick={toggleOverview} className="see-less">
+                    {" "}
+                    See less...
+                  </button>
+                </>
+              )}
             </p>
           </div>
-        </div>
 
-        <div className="movie-actions">
-          <Button
-            text="Watch Trailer"
-            img_path={YouTubeIcon}
-            onClick={handleTrailerClick}
-          />
-        </div>
+          <div className="gen-lang">
+            <div className="genres">
+              <h2 className="mr-15">Genres</h2>
+              <p>{movie.genres.map((genre) => genre.name).join(", ")}</p>
+            </div>
+            <div className="languages">
+              <h2 className="mr-15">Languages</h2>
+              <p>
+                {movie.spoken_languages
+                  .map((lang) => lang.english_name)
+                  .join(", ")}
+              </p>
+            </div>
+          </div>
+
+          <div className="movie-actions">
+            <Button
+              text="Watch Trailer"
+              img_path={YouTubeIcon}
+              onClick={handleTrailerClick}
+            />
+          </div>
+        </article>
       </div>
       <Footer />
     </section>
