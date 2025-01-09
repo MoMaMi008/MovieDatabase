@@ -1,9 +1,8 @@
 .home {
   width: 428px;
-  height: 926px;
+  height: 100vh;
   margin: 0 auto;
   padding: 4rem 1.7rem 0 1.7rem;
-  border: 1px solid brown;
 }
 
 .home h1 {

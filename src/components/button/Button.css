@@ -1,36 +1,41 @@
 .button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    width: 226px;
-    height: 57px;
-    background-color: #fc2121;
-    padding-top: 15px;
-    padding-right: 35px;
-    padding-bottom: 15px;
-    padding-left: 35px;
-    color: white;
-    font-family: 'Poppins-regular';
-    border-radius: 10px;
-    border: none;
-    font-size: 18px;
-    line-height: 27px;
-}
-.button-icon {
-    width: 16.55px;
-    height: 15.05px;
-}
-.back-button {
-    position: fixed; 
-    top: 20px; 
-    left: 20px; 
-    background-color: transparent; 
-    border: none; 
-    z-index: 10; 
-    cursor: pointer; 
-    border-radius: 11px;
-    width: 39.13px; 
-    height: 39.72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 226px;
+  height: 57px;
+  background-color: #fc2121;
+  padding-top: 15px;
+  padding-right: 35px;
+  padding-bottom: 15px;
+  padding-left: 35px;
+  color: white;
+  font-family: "Poppins-regular";
+  font-weight: 800;
+  border-radius: 10px;
+  border: none;
+  font-size: 18px;
+  line-height: 27px;
+  cursor: pointer;
 }
 
+.button-icon {
+  width: 16.55px;
+  height: 15.05px;
+}
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: transparent;
+  border: none;
+  z-index: 10;
+  cursor: pointer;
+  border-radius: 11px;
+  width: 39.13px;
+  height: 39.72px;
+}
+.button:hover {
+  text-decoration: underline;
+}

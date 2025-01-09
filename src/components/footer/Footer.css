@@ -1,19 +1,49 @@
 .footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 10px 0;
-    background-color: white;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    z-index: 1;
+  display: flex;
+  border: 1px solid brown;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1.2rem 0;
+  background-color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
 }
 
 .footer-icons {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.footer .home-icon svg {
+  fill: #97aabd;
+}
+.footer .bookmark-icon svg {
+  stroke: #97aabd;
+  fill: none;
+}
+
+.footer-icons .active .home-active svg {
+  fill: #fc2121;
+}
+.footer-icons .active .bookmark-active svg {
+  stroke: #fc2121;
+}
+.footer .icon-box {
+  display: flex;
+}
+.footer .icon-box p {
+  color: #fc2121;
+  font-weight: 700;
+  display: none;
+}
+.footer .active p {
+  display: flex;
+}
+.bookmarks-text {
+  margin-left: 15px;
 }
