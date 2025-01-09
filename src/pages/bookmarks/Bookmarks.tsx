@@ -11,7 +11,10 @@ const Bookmarks = () => {
       <h1>Bookmarks</h1>
 
       {bookmarks.length !== 0 ? (
-        <BookmarkList />
+        <div className="bookmark-list">
+          {" "}
+          <BookmarkList />
+        </div>
       ) : (
         <article className="no-bookmarks-box">
           <div className="bookmark-icon-box">
