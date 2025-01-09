@@ -14,9 +14,10 @@ const TrendingMovies = () => {
     const { data } = useFetch<ISearchData>(getTrendingUrl(), OPTIONS);
     const [slicedData, setSlicedData] = useState<IMovieHome[]>([]);
 
-    const progressCircle = useRef<HTMLElement | null>(null);
+    const progressCircle = useRef<SVGSVGElement | null>(null);
     const progressContent = useRef<HTMLElement | null>(null);
-    const onAutoplayTimeLeft = (s: unknown, time: number, progress: number) => {
+    // in der folgenden Funktion, wird der erste parameter nicht benötigt. die schreibweise "_" oder "_unknown" ist üblich, um dies zu signalisieren. auch typescript ist mit diesen beiden schreibweisen vertraut und wirft keinen fehler.
+    const onAutoplayTimeLeft = (_unused: unknown, time: number, progress: number) => {
         progressCircle.current!.style.setProperty("--progress", String(1 - progress));
         progressContent.current!.textContent = `${Math.ceil(time / 1000)}s`;
     };
