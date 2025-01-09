@@ -1,14 +1,18 @@
+//React import
 import { useEffect, useRef, useState } from "react";
+// React-Router-Dom import
+import { Link } from "react-router-dom";
+// eigene imports
 import useFetch from "../../hooks/useFetch";
 import { getMovieImage, getTrendingUrl, OPTIONS } from "../../utils/api/Api";
 import { IMovieHome, ISearchData } from "../../pages/home/Home";
-
+// Swiper imports
 import { Autoplay, Pagination, Virtual } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/bundle";
 import "swiper/css/virtual";
+// css import
 import "./TrendingMovies.css";
-import { Link } from "react-router-dom";
 
 const TrendingMovies = () => {
     const { data } = useFetch<ISearchData>(getTrendingUrl(), OPTIONS);
