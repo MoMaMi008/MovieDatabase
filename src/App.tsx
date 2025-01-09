@@ -13,6 +13,7 @@ import { useState } from "react";
 import { IGenre } from "./components/genreSlider/GenreSlider";
 import Bookmarks from "./pages/bookmarks/Bookmarks";
 import { BookmarksContext, InputGenreContext } from "./context/Context";
+// import Trailer from "./pages/trailer/Trailer";
 
 function App() {
   const [inputGenre, setInputGenre] = useState<IGenre>({
@@ -35,6 +36,7 @@ function App() {
         />
         <Route path="/movie/:id" element={<MovieDetails />} />
         <Route path="/bookmarks/" element={<Bookmarks />} />
+        {/* <Route path="/trailer/" element={<Trailer  />} /> */}
       </>
     )
   );

@@ -66,7 +66,10 @@ const MovieDetails: React.FC = () => {
   };
 
   const handleTrailerClick = () => {
-    window.open(trailerUrl, "_blank");
+    const anchor = document.createElement("a");
+    anchor.href = trailerUrl;
+    anchor.rel = "noreferrer";
+    anchor.click();
   };
 
   const handleBackClick = () => {
