@@ -4,9 +4,6 @@
     margin: 0 auto;
     padding: 4rem 1.7rem 0 1.7rem;
 }
-.bookmark-list {
-    height: 100%;
-}
 .bookmarks h1 {
     font-family: Poppins-700, Helvetica;
     font-size: 2rem;
