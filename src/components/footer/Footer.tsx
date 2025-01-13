@@ -2,12 +2,12 @@ import "./Footer.css";
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-import VectorIcon from "../../assets/SVG/Vector.svg";
-import ProfileIcon from "../../assets/SVG/Profile.svg";
 import "./Footer.css";
 
 import NavHomeIcon from "../../assets/SVG/navHomeIcon";
 import BookmarkIcon from "../../assets/SVG/BookmarkIcon";
+import DownloadIcon from "../../assets/SVG/DownloadIcon";
+import ProfileIcon from "../../assets/SVG/ProfileIcon";
 
 const Footer: React.FC = () => {
   return (
@@ -28,11 +28,11 @@ const Footer: React.FC = () => {
           </div>
         </NavLink>
 
-        <div className="vector-icon">
-          <img src={VectorIcon} alt="Vector" />
+        <div>
+          <DownloadIcon />
         </div>
-        <div className="profile-icon">
-          <img src={ProfileIcon} alt="Profile" />
+        <div>
+          <ProfileIcon />
         </div>
       </div>
     </footer>
