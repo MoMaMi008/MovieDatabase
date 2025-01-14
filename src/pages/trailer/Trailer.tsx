@@ -3,14 +3,12 @@ import "./Trailer.css";
 const Trailer = () => {
   const { VIDEO_ID } = useParams<{ VIDEO_ID: string }>();
   return (
-    <div className="trailer">
+    <div className="youtubeplayer-container">
       <iframe
         id="player"
-        // type="text/html"
-        width="928"
-        height="428"
-        src={`https://www.youtube.com/embed/${VIDEO_ID}?enablejsapi=1`}
-        // frameBorder="0"
+        src={`https://www.youtube.com/embed/${VIDEO_ID}`}
+        title="YouTube video player"
+        allowFullScreen
       ></iframe>
     </div>
   );
